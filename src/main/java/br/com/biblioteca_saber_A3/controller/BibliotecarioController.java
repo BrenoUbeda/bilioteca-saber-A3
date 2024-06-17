@@ -38,8 +38,8 @@ public class BibliotecarioController {
     @PostMapping("/reservar-livro")
     public void reservarLivro(String cpfAluno, Integer codigoLivro) {
         Livro livro = livroRepository.findById(codigoLivro).orElse(null);
-        if (livro != null && livro.getFichaAluno() == null) {
-            FichaAluno aluno = fichaAlunoRepository.findById(cpfAluno).orElse(null);
+        if (livro != null /*&& livro.getFichaAluno() == null*/) {
+            FichaAluno aluno = fichaAlunoRepository.findById(FichaAluno.getCpfAluno()).orElse(null);
             if (aluno != null) {
                 livro.setFichaAluno(aluno);
                 livroRepository.save(livro);

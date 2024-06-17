@@ -23,6 +23,15 @@ public class Livro {
         return null;
     }
 
+
+    public Integer getCodigoLivro() {
+        return codigoLivro;
+    }
+
+    public void setCodigoLivro(Integer codigoLivro) {
+        this.codigoLivro = codigoLivro;
+    }
+
     public void setFichaAluno(FichaAluno aluno) {
 
     }

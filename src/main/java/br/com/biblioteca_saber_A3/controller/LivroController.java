@@ -14,11 +14,10 @@ public class LivroController {
     private LivroService livroService;
 
     @PostMapping
-    public ResponseEntity<Livro> cadastrarLivro(@RequestParam("imagemLivro") MultipartFile imagemLivro, @RequestPart Livro livro) {
-        // Processar upload da imagem
-        // Definir caminho da imagem no objeto livro
+    public ResponseEntity<Livro> cadastrarLivro(@RequestBody Livro livro) {
         return ResponseEntity.status(201).body(livroService.cadastrarLivro(livro));
     }
+
 
     @PutMapping("/{codigo}")
     public ResponseEntity<Livro> atualizarLivro(@PathVariable Integer codigo, @RequestBody Livro livro) {
